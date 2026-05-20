@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+body {
+
+  background-color:#0a0a0f;
+  font-family: 'Courier New', monospace;
+}
+
+.wrapper {
+  min-height: 100vh;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  transition: background 0.5s ease;
+}
+
+.clock {
+  font-family: 'Courier New', monospace;
+  font-size: clamp(4rem, 15vw, 8rem);
+  color: var(--text);
+  text-shadow: 0 0 30px var(--glow);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.5rem 2.5rem;
+  letter-spacing: 4px;
+  transition: all 0.5s ease;
+}
+
+.colon {
+  animation: blink 1s step-end infinite;
+  opacity: 0.4;
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+
+.date-label {
+  color: var(--sub);
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  transition: color 0.5s;
+}
+
+/* Theme Picker */
+.theme-picker {
+  display: flex;
+  gap: 12px;
+}
+
+.theme-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  background: var(--card);
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.theme-btn:hover {
+  transform: scale(1.15);
+}
+
+/* ปุ่มที่ active (theme ที่เลือกอยู่) */
+.theme-btn.active {
+  border-color: var(--text);
+  transform: scale(1.2);
+  box-shadow: 0 0 12px var(--glow);
+}
